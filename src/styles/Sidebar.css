@@ -1,0 +1,40 @@
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.sidebar {
+  width: 300px;
+  background-color: #8b4513; /* Exemple : Marron clair */
+  padding: 20px;
+  border-right: 2px solid black; /* Ligne verticale noire */
+  color: white; /* Ajustez la couleur du texte si nécessaire */
+}
+.edit-btn,
+.delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Bouton Edit (vert) */
+.edit-btn {
+  background-color: #28a745; /* Vert vif */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #218838; /* Vert plus foncé */
+}
+
+/* Bouton Delete (rouge) */
+.delete-btn {
+  background-color: #dc3545; /* Rouge vif */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333; /* Rouge plus foncé */
+}

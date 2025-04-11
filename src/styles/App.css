@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+  color: #333;
+}
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5dc; /* Beige clair */
+}
+.sidebar {
+  width: 300px;
+  background-color: #d2b48c;
+  padding: 20px;
+  border-right: 2px solid black; /* Ligne verticale noire */
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.empty-state {
+  text-align: center;
+}
+
+.empty-state-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.empty-state-text {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.create-project-btn {
+  padding: 10px 20px;
+  background-color: #87ceeb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-project-btn:hover {
+  background-color: #00bfff
+}
+.form-container {
+  width: 400px;
+  background-color: #f5f5dc; /* Beige clair */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,20 @@
+.project-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .project-form input,
+  .project-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .project-form button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
