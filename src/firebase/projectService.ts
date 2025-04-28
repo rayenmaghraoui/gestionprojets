@@ -1,5 +1,5 @@
 import { db } from "./config";
-import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
+import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
 
 export interface Project {
   id?: string; // Identifiant Firestore
@@ -12,8 +12,10 @@ export interface Project {
 // Ajouter un projet dans Firestore
 export const addProject = async (project: Project) => {
   try {
-    const docRef = await addDoc(collection(db, "projects"), project);
-    return { id: docRef.id, ...project };
+    // Exclure le champ `id` avant d'ajouter le projet
+    const { id, ...projectData } = project;
+    const docRef = await addDoc(collection(db, "projects"), projectData);
+    return { id: docRef.id, ...projectData };
   } catch (error) {
     console.error("Error adding project: ", error);
     throw error;
@@ -41,6 +43,25 @@ export const deleteProject = async (projectId: string) => {
     await deleteDoc(projectRef);
   } catch (error) {
     console.error("Error deleting project: ", error);
+    throw error;
+  }
+};
+
+// Mettre à jour un projet dans Firestore
+export const updateProject = async (project: Project): Promise<void> => {
+  if (!project.id) {
+    throw new Error("Project ID is required for updating.");
+  }
+  try {
+    const projectRef = doc(db, "projects", project.id); // Référence au document
+    await updateDoc(projectRef, {
+      title: project.title,
+      date: project.date,
+      description: project.description,
+      type: project.type,
+    });
+  } catch (error) {
+    console.error("Error updating project: ", error);
     throw error;
   }
 };

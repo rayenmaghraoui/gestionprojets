@@ -37,7 +37,13 @@ const Form = ({
             return;
         }
         setError(""); // Réinitialiser l'erreur si tous les champs sont remplis
-        onSave({ title, date, description, type });
+        onSave({
+            id: editingProject?.id, // Inclure l'ID si c'est une édition
+            title,
+            date,
+            description,
+            type,
+        });
     };
 
     return (

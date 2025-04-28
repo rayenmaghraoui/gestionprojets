@@ -23,11 +23,34 @@ button {
 }
 
 button:first-child {
-  background-color: #28a745; /* Vert */
+  background-color: #28a745; 
   color: white;
 }
 
 button:last-child {
-  background-color: #dc3545; /* Rouge */
+  background-color: #dc3545; 
   color: white;
+}
+
+.status-dropdown {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+
+.status-dropdown:hover {
+  border-color: #4caf50;
+}
+
+
+.status-dropdown:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
 }
